@@ -19,10 +19,11 @@ def winner():
 
     else:
         for key, value in hands.items():
-            if computer_choice in value and user_choice == key:
-                return f"Computer chose {computer_choice}, you won!"
-            else:
-                return f"Computer chose {computer_choice}, you lost."
+            if computer_choice in value:
+                if user_choice == key:
+                    return f"Computer chose {computer_choice}, you won!"
+                else:
+                    return f"Computer chose {computer_choice}, you lost."
 
 
 print(winner())

@@ -1,7 +1,6 @@
 import random
 
-def winner():
-    hands = {
+hands = {
         'rock': ['scissors', 'lizard'],
         'paper': ['rock', 'spock'],
         'scissors': ['paper', 'lizard'],
@@ -9,11 +8,13 @@ def winner():
         'spock': ['scissors', 'rock']
     }
 
-    user_input = input("(Rock, Paper, Scissors, Lizard or Spock) What do you choose?: ")
-  
-    user_choice = user_input.lower()
-    computer_choice = random.choice(list(hands.keys()))
+user_input = input("(Rock, Paper, Scissors, Lizard or Spock) What do you choose?: ")
 
+user_choice = user_input.lower()
+computer_choice = random.choice(list(hands.keys()))
+
+
+def winner(user_choice, computer_choice):
     if computer_choice == user_choice:
         return f"Computer chose {computer_choice}, It's a tie!"
 
@@ -26,4 +27,4 @@ def winner():
                     return f"Computer chose {computer_choice}, you lost."
 
 
-print(winner())
+print(winner(user_choice, computer_choice))
